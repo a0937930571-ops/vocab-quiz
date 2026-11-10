@@ -1,0 +1,245 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2685.7">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="zh-TW"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;Unit 3 &amp; Unit 4 單字全套測驗 (57題)&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>:root {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--primary: #4f46e5;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--primary-hover: #4338ca;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--bg: #f8fafc;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--card-bg: #ffffff;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--text: #0f172a;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--text-muted: #64748b;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--correct-bg: #dcfce7;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--correct-border: #22c55e;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--correct-text: #15803d;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--wrong-bg: #fee2e2;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--wrong-border: #ef4444;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--wrong-text: #b91c1c;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>* { box-sizing: border-box; margin: 0; padding: 0; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background-color: var(--bg); color: var(--text); padding-bottom: 60px; line-height: 1.5; }</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.header { sticky: top: 0; position: sticky; top: 0; z-index: 10; background-color: rgba(255, 255, 255, 0.95); backdrop-filter: blur(8px); border-bottom: 1px solid #e2e8f0; padding: 16px 20px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.header-container { max-width: 800px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 16px; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.title { font-size: 1.1rem; font-weight: 700; color: var(--text); }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.stats { font-size: 0.95rem; font-weight: 600; color: var(--primary); display: flex; gap: 12px; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.progress-bar-container { max-width: 800px; margin: 8px auto 0; background: #e2e8f0; height: 6px; border-radius: 3px; overflow: hidden; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.progress-bar { height: 100%; background: var(--primary); width: 0%; transition: width 0.3s ease; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.container { max-width: 800px; margin: 24px auto; padding: 0 16px; display: flex; flex-direction: column; gap: 20px; }</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.question-card { background: var(--card-bg); border-radius: 12px; padding: 20px; border: 1px solid #e2e8f0; box-shadow: 0 1px 3px rgba(0,0,0,0.05); position: relative; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.q-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.q-number { font-size: 0.85rem; font-weight: 700; color: var(--primary); background: #eef2ff; padding: 2px 8px; border-radius: 6px; }</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.redo-btn { background: none; border: none; color: var(--text-muted); cursor: pointer; padding: 4px 8px; border-radius: 6px; font-size: 1.1rem; transition: all 0.2s; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.redo-btn:hover { background: #f1f5f9; color: var(--text); transform: rotate(-45deg); }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.sentence { font-size: 1.05rem; font-weight: 500; margin-bottom: 16px; color: #1e293b; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.blank { display: inline-block; border-bottom: 2px solid var(--primary); min-width: 80px; text-align: center; font-weight: 700; color: var(--primary); padding: 0 4px; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.options-grid { display: grid; grid-template-columns: 1fr; gap: 8px; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>@media (min-width: 640px) { .options-grid { grid-template-columns: 1fr 1fr; } }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.option-btn { background: #fff; border: 1px solid #cbd5e1; border-radius: 8px; padding: 10px 14px; text-align: left; font-size: 0.95rem; cursor: pointer; transition: all 0.15s ease; color: #334155; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.option-btn:hover:not(:disabled) { border-color: var(--primary); background-color: #f8fafc; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.option-btn:disabled { cursor: default; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.option-btn.correct { background-color: var(--correct-bg) !important; border-color: var(--correct-border) !important; color: var(--correct-text) !important; font-weight: 600; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.option-btn.wrong { background-color: var(--wrong-bg) !important; border-color: var(--wrong-border) !important; color: var(--wrong-text) !important; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="header"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="header-container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="title"&gt;Unit 3 &amp; Unit 4 單字總複習 (57題)&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="stats"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;span&gt;答對: &lt;strong id="score"&gt;0&lt;/strong&gt; / 57&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;span&gt;完成: &lt;strong id="completed"&gt;0&lt;/strong&gt; / 57&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="progress-bar-container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="progress-bar" id="progress"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="container" id="quiz-container"&gt;&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const questionsData = [</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ id: 1, text: "Gary is depressed about his _____ to win the road race.", ans: "A", options: { A: "失敗", B: "組織", C: "展覽", D: "味道" } },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ id: 2, text: "This writer is famous for his _____ Facebook posts, and they always make the readers laugh.", ans: "B", options: { A: "著名的", B: "有趣的，好玩的", C: "冷凍的", D: "痛苦的" } },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ id: 3, text: "The baby’s funny face _____ everyone.", ans: "A", options: { A: "逗樂，逗笑", B: "收集", C: "堅持", D: "污染" } },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ id: 4, text: "Mia _____ her colored pencils and put them into her pencil case.", ans: "A", options: { A: "收集，聚集", B: "展示", C: "混合", D: "呼吸" } },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ id: 5, text: "Mr. Huang donates money to an _____ every month to help poor children.", ans: "B", options: { A: "目的地", B: "組織，機構", C: "道路", D: "事件" } },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ id: 6, text: "Nick is _____ a party for Amber to celebrate her birthday.", ans: "A", options: { A: "組織，籌備", B: "減少", C: "催促", D: "想知道" } },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ id: 7, text: "Anna is doing _____ on new ways to bake a cake.", ans: "A", options: { A: "研究，調查", B: "意志", C: "代表", D: "危機" } },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ id: 8, text: "The students were asked to _____ their family tree for their homework.", ans: "B", options: { A: "結冰", B: "研究，調查", C: "象徵", D: "漂浮" } },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ id: 9, text: "The young artist was excited to _____ her works at a famous arts festival.", ans: "A", options: { A: "展示", B: "堅持", C: "擁抱", D: "吞" } },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ id: 10, text: "When the little boy passed by the toy store, he was attracted to the window _____.", ans: "A", options: { A: "展覽，陳列", B: "味道", C: "時期", D: "生物" } },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ id: 11, text: "To become a better cook, Julie _____ on practicing her knife skills every day.", ans: "A", options: { A: "堅持", B: "混合", C: "呼吸", D: "惹惱" } },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ id: 12, text: "After months of hard work, Daniel achieved his _____ of getting one hundred thousand fans on YouTube.", ans: "A", options: { A: "目的，目標", B: "失敗", C: "機構", D: "災害" } },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ id: 13, text: "I didn’t eat much for lunch, so I feel _____ hungry now.", ans: "A", options: { A: "特別，尤其", B: "現在", C: "同時", D: "緊急地" } },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ id: 14, text: "Jack only drinks _____ types of tea, such as green and black tea.", ans: "A", options: { A: "特別的，特定的", B: "冷凍的", C: "令人愉快的", D: "願意的" } },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ id: 15, text: "Rebecca puts the _____ meat in warm water, so she can cook it for lunch later.", ans: "A", options: { A: "冷凍的", B: "痛苦的", C: "惱人的", D: "急迫的" } },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ id: 16, text: "Ms. Wang _____ the dumplings to make sure that they stayed fresh.", ans: "A", options: { A: "結冰，冷凍", B: "收集", C: "展示", D: "象徵" } },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ id: 17, text: "The color green is a _____ of blue and yellow.", ans: "A", options: { A: "混合(物)", B: "組織", C: "代表", D: "道路" } },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ id: 18, text: "Nancy likes to make her own drinks. She often _____ green tea with milk.", ans: "A", options: { A: "混合", B: "籌備", C: "堅持", D: "擁抱" } },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ id: 19, text: "Gary loves the strong _____ of blue cheese.", ans: "A", options: { A: "味道", B: "意志", C: "時期", D: "環境" } },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ id: 20, text: "Ariel is so busy that she hasn’t visited her parents for a long _____ of time.", ans: "A", options: { A: "一段時間，時期", B: "展覽", C: "目標", D: "事件" } },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ id: 21, text: "The ding-dong sound from Mandy’s smartphone _____ an incoming LINE message.", ans: "A", options: { A: "象徵，表示", B: "研究", C: "逗樂", D: "呼吸" } },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ id: 22, text: "The statue in the park serves as an important _____ of unity.", ans: "A", options: { A: "代表，象徵", B: "失敗", C: "混合", D: "痛苦" } },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ id: 23, text: "The company sent a _____ to attend the meeting on saving electricity.", ans: "A", options: { A: "代表", B: "道路", C: "災害", D: "危機" } },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ id: 24, text: "We had an _____ picnic with delicious food and music.", ans: "A", options: { A: "令人愉快的", B: "有趣的", C: "特定的", D: "冷凍的" } },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ id: 25, text: "Tom is _____ to do anything to promote his new product.", ans: "A", options: { A: "願意的", B: "痛苦的", C: "惱人的", D: "急迫的" } },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ id: 26, text: "Although Mike is losing energy in the game, he still has a strong _____ to win.", ans: "A", options: { A: "意願，意志", B: "目的", C: "味道", D: "生物" } },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ id: 27, text: "My grandparents are glad to _____ new technology although it takes time to learn.", ans: "A", options: { A: "擁抱，欣然接受", B: "籌備", C: "研究", D: "吞" } },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ id: 28, text: "I walk down a _____ between the two houses to get to my school every day.", ans: "A", options: { A: "道路，小徑", B: "組織", C: "時期", D: "事件" } },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ id: 29, text: "When Cole feels angry, he often _____ deeply to calm himself down.", ans: "A", options: { A: "呼吸", B: "收集", C: "堅持", D: "惹惱" } },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ id: 30, text: "When Tim’s new smartphone fell from his hands, he took a deep _____.", ans: "A", options: { A: "一口氣", B: "失敗", C: "展覽", D: "痛苦" } },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ id: 31, text: "Rita was so hungry that she _____ three wheel cakes within five minutes.", ans: "A", options: { A: "吞", B: "混合", C: "展示", D: "漂浮" } },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ id: 32, text: "Thanks to the nurse, the injury to Mike’s finger soon became less _____.", ans: "A", options: { A: "疼痛的，痛苦的", B: "冷凍的", C: "特定的", D: "惱人的" } },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ id: 33, text: "When I stepped on a nail, I felt a sharp _____ in my foot.", ans: "A", options: { A: "疼痛，痛苦", B: "味道", C: "意志", D: "災害" } },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ id: 34, text: "It is _____ that people talk during movies.", ans: "A", options: { A: "惱人的", B: "有趣的", C: "令人愉快的", D: "願意的" } },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ id: 35, text: "A mosquito really _____ me last night. I could not sleep well because of it!", ans: "A", options: { A: "惹惱，使生氣", B: "逗樂", C: "籌備", D: "減少" } },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ id: 36, text: "The typhoon was a great _____ in this area. Many people lost their homes because of it.", ans: "A", options: { A: "災難，災害", B: "組織", C: "目的", D: "危機" } },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ id: 37, text: "My character in the mobile game _____ the attack although it was almost beaten.", ans: "A", options: { A: "活下來，生還", B: "堅持", C: "擁抱", D: "催促" } },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ id: 38, text: "People in poor countries have to fight for _____ every day.", ans: "A", options: { A: "存活，生還", B: "代表", C: "時期", D: "努力" } },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ id: 39, text: "Cockroaches are one of the _____ that I dislike the most because they make me feel sick.", ans: "A", options: { A: "生物", B: "道路", C: "展覽", D: "事件" } },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ id: 40, text: "To protect the _____, we can choose to use reusable chopsticks instead of single-use ones.", ans: "A", options: { A: "自然環境", B: "機構", C: "混合", D: "污染" } },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ id: 41, text: "Wesley placed a shower chair in the bathroom to make it a safer _____ for his grandma.", ans: "A", options: { A: "環境，周遭", B: "失敗", C: "一口氣", D: "災害" } },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ id: 42, text: "The study deals with some global _____ issues, such as climate change.", ans: "A", options: { A: "與環境相關的", B: "有趣的", C: "特定的", D: "痛苦的" } },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ id: 43, text: "Don’t throw your trash into the river! You will _____ the water.", ans: "A", options: { A: "污染", B: "聚集", C: "展示", D: "呼吸" } },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ id: 44, text: "The growing number of cars and scooters in the city is causing serious air _____.", ans: "A", options: { A: "污染", B: "組織", C: "味道", D: "生物" } },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ id: 45, text: "My sister loves to _____ her toy rubber ducks on the water when she takes a bath.", ans: "A", options: { A: "漂浮", B: "結冰", C: "吞", D: "惹惱" } },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ id: 46, text: "Despite the bad weather, the boat arrived at the shore without _____.", ans: "A", options: { A: "事件", B: "目的", C: "代表", D: "危機" } },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ id: 47, text: "Ryan is in _____ need of his medicine, or he may become too weak to stand.", ans: "A", options: { A: "急迫的，緊急的", B: "冷凍的", C: "令人愉快的", D: "願意的" } },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ id: 48, text: "Ben _____ me to get in the taxi quickly because we were going to be late for work.", ans: "A", options: { A: "催促，力勸", B: "籌備", C: "混合", D: "擁抱" } },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ id: 49, text: "This laptop is on sale. The price has been _____ from twenty thousand to ten thousand dollars.", ans: "A", options: { A: "減少，降低", B: "堅持", C: "呼吸", D: "禁止" } },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ id: 50, text: "The company announced significant _____ in staff due to budget cuts.", ans: "A", options: { A: "減少，降低", B: "展覽", C: "意志", D: "時期" } },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ id: 51, text: "The baby is making an _____ to climb the stairs by himself.", ans: "A", options: { A: "努力，盡力", B: "失敗", C: "道路", D: "事件" } },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ id: 52, text: "Mandy and Brian’s relationship is in _____. They fight more and more often.", ans: "A", options: { A: "危機", B: "組織", C: "災害", D: "環境" } },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ id: 53, text: "Julie has already left work for the day. _____, her boss is still sending emails for her to check.", ans: "A", options: { A: "同時", B: "特別", C: "目前", D: "特別地" } },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ id: 54, text: "Smoking is _____ in this restaurant, so customers need to go outside to smoke.", ans: "A", options: { A: "禁止", B: "展示", C: "污染", D: "減少" } },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ id: 55, text: "Tickets to that show are _____ available, so let’s get some soon!", ans: "A", options: { A: "目前，現在", B: "同時", C: "特別", D: "緊急地" } },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ id: 56, text: "The _____ trend in fashion favors bold colors and expressive designs.", ans: "A", options: { A: "現在的", B: "冷凍的", C: "惱人的", D: "急迫的" } },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ id: 57, text: "I was _____ who put this love letter in my desk drawer.", ans: "A", options: { A: "想知道", B: "逗樂", C: "擁抱", D: "催促" } }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>];</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>let state = {};</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function initQuiz() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const container = document.getElementById('quiz-container');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>container.innerHTML = '';</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>questionsData.forEach(q =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>state[q.id] = { answered: false, correct: false };</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>const card = document.createElement('div');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>card.className = 'question-card';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>card.id = `card-${q.id}`;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>const sentenceWithBlank = q.text.replace('_____', `&lt;span class="blank" id="blank-${q.id}"&gt;______&lt;/span&gt;`);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>card.innerHTML = `</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="q-header"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;span class="q-number"&gt;Question ${q.id}&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;button class="redo-btn" onclick="resetQuestion(${q.id})" title="重作此題"&gt;↻&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="sentence"&gt;${sentenceWithBlank}&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="options-grid" id="options-${q.id}"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>${Object.entries(q.options).map(([key, value]) =&gt; `</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;button class="option-btn" id="btn-${q.id}-${key}" onclick="checkAnswer(${q.id}, '${key}')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>(${key}) ${value}</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>`).join('')}</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>`;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>container.appendChild(card);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p1"><span class="Apple-converted-space">            </span>updateHeader();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function checkAnswer(qId, key) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (state[qId].answered) return;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const q = questionsData.find(item =&gt; item.id === qId);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const isCorrect = key === q.ans;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>state[qId].answered = true;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>state[qId].correct = isCorrect;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const blankEl = document.getElementById(`blank-${qId}`);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>blankEl.innerText = key;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const selectedBtn = document.getElementById(`btn-${qId}-${key}`);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const correctBtn = document.getElementById(`btn-${qId}-${q.ans}`);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (isCorrect) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>selectedBtn.classList.add('correct');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>selectedBtn.classList.add('wrong');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>correctBtn.classList.add('correct');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>Object.keys(q.options).forEach(optKey =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById(`btn-${qId}-${optKey}`).disabled = true;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>updateHeader();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function resetQuestion(qId) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (!state[qId].answered) return;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>state[qId].answered = false;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>state[qId].correct = false;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const blankEl = document.getElementById(`blank-${qId}`);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>blankEl.innerText = "______";</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const q = questionsData.find(item =&gt; item.id === qId);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>Object.keys(q.options).forEach(optKey =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const btn = document.getElementById(`btn-${qId}-${optKey}`);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>btn.disabled = false;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>btn.classList.remove('correct', 'wrong');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>updateHeader();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function updateHeader() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const completedCount = Object.values(state).filter(s =&gt; s.answered).length;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const scoreCount = Object.values(state).filter(s =&gt; s.correct).length;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const total = questionsData.length;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('completed').innerText = completedCount;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('score').innerText = scoreCount;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('progress').style.width = `${(completedCount / total) * 100}%`;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>window.onload = initQuiz;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
